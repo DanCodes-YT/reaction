@@ -1,9 +1,12 @@
 local enet = require("enet")
 local utf8 = require("utf8")
 local udim2 = require("reaction.udim2")
+local vector2 = require("reaction.vector2")
 
 function love.load()
-    text = "Type away! -- "
+    local angle = tostring(vector2.yAxis.Angle)
+
+    text = "Type away! -- "..angle
 
     -- enable key repeat so backspace can be held down to trigger love.keypressed multiple times.
     love.keyboard.setKeyRepeat(true)
