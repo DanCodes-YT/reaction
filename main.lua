@@ -4,7 +4,7 @@ local udim2 = require("reaction.udim2")
 local vector2 = require("reaction.vector2")
 
 function love.load()
-    local angle = tostring(vector2.yAxis.Angle)
+    local angle = tostring(vector2.yAxis:angle())
 
     text = "Type away! -- "..angle
 

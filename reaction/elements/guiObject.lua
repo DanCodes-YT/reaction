@@ -1,14 +1,21 @@
-local vector2 = require("vector2")
+local udim2 = require("reaction.udim2")
+local vector2 = require("reaction.vector2")
 
 --- @class GuiObject
---- @field AnchorPoint Vector2
+--- @field anchorPoint Vector2
+--- @field position UDim2
+--- @field size UDim2
+--- @field rotation number
 local guiObject = {}
-guiObject.__index = {}
+guiObject.__index = guiObject
 
 --- @return GuiObject
 function guiObject.new()
 	local self = {}
-	self.AnchorPoint = vector2.new(0, 0)
+	self.anchorPoint = vector2.new()
+	self.position = udim2.new()
+	self.size = udim2.new(100, 100)
+	self.rotation = 0
 
 	return setmetatable(self, guiObject)
 end
